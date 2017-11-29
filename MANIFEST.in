@@ -1,0 +1,6 @@
+include LICENSE.txt
+include README.rst
+recursive-include djangocms_icon/locale *
+recursive-include djangocms_icon/static *
+recursive-include djangocms_icon/templates *
+ecursive-exclude * *.pyc
