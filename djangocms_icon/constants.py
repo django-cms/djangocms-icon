@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 
 
-DJANGOCMS_ICON_SETS = (
-    ('glyphicons', 'glyphicons', 'Glyphicons'),
+DEFAULT_DJANGOCMS_ICON_SETS = (
     ('fontawesome', 'fa', 'Font Awesome'),
 )
