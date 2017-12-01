@@ -31,7 +31,8 @@ function override(originalFunction, functionBuilder) {
 // }
 $.fn.iconpicker.Constructor.prototype.select = override($.fn.iconpicker.Constructor.prototype.select, function (originalSelect) {
     return function(icon) {
-        if (!this.options.svg) {
+        if (this.options.iconset !== '_custom' || !$.fn.iconpicker.Constructor.ICONSET._custom ||
+            !$.fn.iconpicker.Constructor.ICONSET._custom.svg) {
             return originalSelect.call(this, icon);
         }
 
