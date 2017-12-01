@@ -15,7 +15,6 @@ def iconset_from_class(value):
     extracts the iconset from a class definition
     "fa-flask" -> "fa"
     :param value:
-    :return:
     """
     if '-' in value:
         return value.split('-')[0]

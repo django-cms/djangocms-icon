@@ -6,12 +6,12 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 
 from . import models
-from . import forms
+from .forms import IconForm
 
 
 class IconPlugin(CMSPluginBase):
     model = models.Icon
-    form = forms.IconForm
+    form = IconForm
     name = _('Icon')
     allow_children = True
     text_enabled = True

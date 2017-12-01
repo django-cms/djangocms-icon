@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.conf import settings
 from django.db import models
 from django.forms import fields, widgets
-from django.conf import settings
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import ugettext
 
 from .constants import DEFAULT_DJANGOCMS_ICON_SETS
 
@@ -29,12 +29,12 @@ class IconFieldWidget(widgets.TextInput):
         if value is None:
             value = ''
         iconset = value.split('-')[0] if value and '-' in value else ''
-        DJANGOCMS_ICON_ICONSETS = get_iconsets()
-        iconset_prefixes = [s[1] for s in DJANGOCMS_ICON_ICONSETS]
-        if len(DJANGOCMS_ICON_ICONSETS) and iconset not in iconset_prefixes:
+        iconsets = get_iconsets()
+        iconset_prefixes = [s[1] for s in iconsets]
+        if len(iconsets) and iconset not in iconset_prefixes:
             # invalid iconset! maybe because the iconset was removed from
             # the project. set it to the first in the list.
-            iconset = DJANGOCMS_ICON_ICONSETS[0][1]
+            iconset = iconsets[0][1]
         from django.template.loader import render_to_string
         rendered = render_to_string(
             'admin/djangocms_icon/widgets/icon.html',
@@ -44,7 +44,7 @@ class IconFieldWidget(widgets.TextInput):
                 'name': name,
                 'iconset': iconset,
                 'is_required': self.is_required,
-                'iconsets': DJANGOCMS_ICON_ICONSETS,
+                'iconsets': iconsets,
             },
         )
         return rendered
