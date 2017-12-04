@@ -1,7 +1,9 @@
 import $ from 'jquery';
-import './libs/bootstrap/transition';
-import './libs/bootstrap/tooltip';
-import './libs/bootstrap/popover';
+
+import 'bootstrap-sass/assets/javascripts/bootstrap/transition';
+import 'bootstrap-sass/assets/javascripts/bootstrap/tooltip';
+import 'bootstrap-sass/assets/javascripts/bootstrap/popover'
+
 import './libs/iconset/iconset-fontawesome-all.js';
 import './libs/bootstrap-iconpicker';
 
