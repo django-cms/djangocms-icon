@@ -57,6 +57,5 @@ class AbstractIcon(CMSPlugin):
 
 
 class Icon(AbstractIcon):
-
     class Meta:
         abstract = False

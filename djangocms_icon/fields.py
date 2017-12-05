@@ -1,34 +1,50 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.conf import settings
 from django.db import models
 from django.forms import fields, widgets
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import ugettext
 
-from .constants import DJANGOCMS_ICON_SETS
+from .constants import DEFAULT_DJANGOCMS_ICON_SETS
+
+
+def get_iconsets():
+    return getattr(settings, 'DJANGOCMS_ICON_SETS', DEFAULT_DJANGOCMS_ICON_SETS)
 
 
 class IconFieldWidget(widgets.TextInput):
+    class Media:
+        css = {
+            'all': (
+                'djangocms_icon/css/djangocms-icon.css',
+            )
+        }
+        js = (
+            'djangocms_icon/js/dist/bundle.icon.min.js',
+        )
+
     def render(self, name, value, attrs=None, **kwargs):
         input_html = super(IconFieldWidget, self).render(name, value, attrs=attrs, **kwargs)
         if value is None:
             value = ''
         iconset = value.split('-')[0] if value and '-' in value else ''
-        iconset_prefexes = [s[1] for s in DJANGOCMS_ICON_SETS]
-        if len(DJANGOCMS_ICON_SETS) and iconset not in iconset_prefexes:
+        iconsets = get_iconsets()
+        iconset_prefixes = [s[1] for s in iconsets]
+        if len(iconsets) and iconset not in iconset_prefixes:
             # invalid iconset! maybe because the iconset was removed from
             # the project. set it to the first in the list.
-            iconset = DJANGOCMS_ICON_SETS[0][1]
+            iconset = iconsets[0][1]
         from django.template.loader import render_to_string
         rendered = render_to_string(
-            'djangocms_bootstrap4/widgets/icon.html',
+            'admin/djangocms_icon/widgets/icon.html',
             {
                 'input_html': input_html,
                 'value': value,
                 'name': name,
                 'iconset': iconset,
                 'is_required': self.is_required,
-                'iconsets': DJANGOCMS_ICON_SETS,
+                'iconsets': iconsets,
             },
         )
         return rendered
