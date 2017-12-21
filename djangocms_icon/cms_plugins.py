@@ -16,6 +16,21 @@ class IconPlugin(CMSPluginBase):
     text_enabled = True
     change_form_template = 'admin/djangocms_icon/change_form.html'
 
+    fieldsets = [
+        (None, {
+            'fields': (
+                ('icon', 'label'),
+            )
+        }),
+        (_('Advanced settings'), {
+            'classes': ('collapse',),
+            'fields': (
+                'template',
+                'attributes',
+            )
+        }),
+    ]
+
     def get_render_template(self, context, instance, placeholder):
         return 'djangocms_icon/{}/icon.html'.format(instance.template)
 

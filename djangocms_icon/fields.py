@@ -6,11 +6,11 @@ from django.db import models
 from django.forms import fields, widgets
 from django.utils.translation import ugettext
 
-from .constants import DEFAULT_DJANGOCMS_ICON_SETS
-
 
 def get_iconsets():
-    return getattr(settings, 'DJANGOCMS_ICON_SETS', DEFAULT_DJANGOCMS_ICON_SETS)
+    return getattr(settings, 'DJANGOCMS_ICON_SETS', (
+        ('fontawesome', 'fa', 'Font Awesome'),
+    ))
 
 
 class IconFieldWidget(widgets.TextInput):
