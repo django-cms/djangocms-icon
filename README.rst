@@ -50,8 +50,45 @@ For a manual install:
 Configuration
 -------------
 
-Note that the provided templates are very minimal by design. You are encouraged
-to adapt and override them to your project's requirements.
+The django CMS Icon plugin ships with Font Awesome as default. You can
+configure this through::
+
+    DJANGOCMS_ICON_SETS = [
+        ('fontawesome', 'fa', 'Font Awesome'),
+        (ICONSET, 'svg', 'SVG icons'),
+    ]
+
+In this example we keep the Font Awesome default and add our own SVG icon set
+on top of it. ``ICONSET`` is an external reference to a JSON file at the root
+of your project setting up your custom SVG icon set::
+
+    with open('iconset.json') as fh:
+        ICONSET = fh.read()
+
+Here an example of its content::
+
+    {
+        "svg": true,
+        "spritePath": "sprites/icons.svg",
+        "iconClass": "icon",
+        "iconClassFix": "icon-",
+        "icons": [
+            "icon1",
+            "icon2",
+            "..."
+        ]
+    }
+
+``svg`` and ``spritePath`` are only required when using an SVG set. You can
+also use this to generate your own icon font definitions or add them straight
+to the ``DJANGOCMS_ICON_SETS`` setting.
+
+`djangocms-boilerplate-webpack<https://github.com/divio/djangocms-boilerplate-webpack/blob/master/tools/tasks/icons/json.js>`_
+can generate the ``iconset.json`` automatically for you through ``gulp icons``.
+
+In addition **you need to load** the resources for your fonts in
+``/admin/djangocms_icon/change_form.html`` through your project in order for
+the icon picker to pick up your custom icons.
 
 
 Running Tests
