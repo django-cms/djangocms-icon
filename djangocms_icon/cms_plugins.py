@@ -14,7 +14,6 @@ class IconPlugin(CMSPluginBase):
     name = _('Icon')
     allow_children = True
     text_enabled = True
-    change_form_template = 'admin/djangocms_icon/change_form.html'
 
     fieldsets = [
         (None, {

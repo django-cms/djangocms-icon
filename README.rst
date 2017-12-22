@@ -87,7 +87,7 @@ to the ``DJANGOCMS_ICON_SETS`` setting.
 can generate the ``iconset.json`` automatically for you through ``gulp icons``.
 
 In addition **you need to load** the resources for your fonts in
-``/admin/djangocms_icon/change_form.html`` through your project in order for
+``/admin/djangocms_icon/includes/assets.html`` through your project in order for
 the icon picker to pick up your custom icons.
 
 
