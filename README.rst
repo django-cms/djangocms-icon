@@ -83,7 +83,7 @@ Here an example of its content::
 also use this to generate your own icon font definitions or add them straight
 to the ``DJANGOCMS_ICON_SETS`` setting.
 
-`djangocms-boilerplate-webpack<https://github.com/divio/djangocms-boilerplate-webpack/blob/master/tools/tasks/icons/json.js>`_
+`djangocms-boilerplate-webpack <https://github.com/divio/djangocms-boilerplate-webpack/blob/master/tools/tasks/icons/json.js>`_
 can generate the ``iconset.json`` automatically for you through ``gulp icons``.
 
 In addition **you need to load** the resources for your fonts in
