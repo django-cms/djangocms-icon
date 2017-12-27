@@ -3,7 +3,14 @@ Changelog
 =========
 
 
-0.1.0 (unreleased)
+0.2.0 (2017-12-27)
+==================
+
+* Added separate icon include
+* Removed change_form template in favour of include
+
+
+0.1.0 (2017-12-22)
 ==================
 
 * Initial release
