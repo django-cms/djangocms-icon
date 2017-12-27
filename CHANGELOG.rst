@@ -3,7 +3,7 @@ Changelog
 =========
 
 
-0.2.0 (unreleased)
+0.2.0 (2017-12-27)
 ==================
 
 * Added separate icon include
