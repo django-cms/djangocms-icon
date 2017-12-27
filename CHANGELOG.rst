@@ -7,7 +7,7 @@ Changelog
 ==================
 
 * Added separate icon include
-* Removed changelog template in favor of asset includes
+* Removed change_form template in favour of include
 
 
 0.1.0 (2017-12-22)
