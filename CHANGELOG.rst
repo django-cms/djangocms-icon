@@ -3,6 +3,12 @@ Changelog
 =========
 
 
+0.2.1 (unreleased)
+==================
+
+* Removed newline from *icon.html
+
+
 0.2.0 (2017-12-27)
 ==================
 
