@@ -6,7 +6,8 @@ Changelog
 0.2.1 (unreleased)
 ==================
 
-* Removed newline from *icon.html
+* Removed newline from ``*icon.html``
+* Fixed bugs in the icon widget
 
 
 0.2.0 (2017-12-27)

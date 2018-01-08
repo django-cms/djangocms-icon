@@ -54,10 +54,14 @@ export default class IconWidget {
         enableIconCheckbox.on('change', function () {
             if ($(this).prop('checked')) {
                 widgets.removeClass('hidden');
-                iconPicker.trigger('change');
+                const val = iconPickerButton.data('bs.iconpicker').options.icon;
+
+                if (val) {
+                    iconPickerButton.find('input').val(val).trigger('change');
+                }
             } else {
                 widgets.addClass('hidden');
-                iconPickerButton.find('input').val('');
+                iconPickerButton.find('input').val('').trigger('change');
             }
         }).trigger('change');
     }
