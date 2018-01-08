@@ -55,7 +55,7 @@ configure this through::
 
     DJANGOCMS_ICON_SETS = [
         ('fontawesome', 'fa', 'Font Awesome'),
-        (ICONSET, 'svg', 'SVG icons'),
+        (ICONSET, 'icon', 'SVG icons'),
     ]
 
 In this example we keep the Font Awesome default and add our own SVG icon set
@@ -73,8 +73,8 @@ Here an example of its content::
         "iconClass": "icon",
         "iconClassFix": "icon-",
         "icons": [
-            "icon1",
-            "icon2",
+            "icon-icon1",
+            "icon-icon2",
             "..."
         ]
     }
@@ -89,6 +89,10 @@ can generate the ``iconset.json`` automatically for you through ``gulp icons``.
 In addition **you need to load** the resources for your fonts in
 ``/admin/djangocms_icon/includes/assets.html`` through your project in order for
 the icon picker to pick up your custom icons.
+
+Make sure the icons names contain the iconset prefix as shown in the example,
+the widget will determine the iconset based on that. They can be omitted if only
+one iconset is used.
 
 
 Running Tests
