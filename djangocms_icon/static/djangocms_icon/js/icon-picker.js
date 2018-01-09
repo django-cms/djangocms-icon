@@ -35,32 +35,34 @@ $.fn.iconpicker.Constructor.prototype.select = override($.fn.iconpicker.Construc
     return function(icon) {
         if (this.options.iconset !== '_custom' || !$.fn.iconpicker.Constructor.ICONSET._custom ||
             !$.fn.iconpicker.Constructor.ICONSET._custom.svg) {
+            this.$element.find('i').html('');
             return originalSelect.call(this, icon);
         }
 
         var op = this.options;
         var el = this.$element;
-        op.selected = $.inArray(icon.replace(op.iconClassFix, ''), op.icons);
+        op.selected = $.inArray(icon, op.icons);
         if (op.selected === -1) {
             op.selected = 0;
-            icon = op.iconClassFix + op.icons[op.selected];
+            icon = op.icons[op.selected];
         }
         if (icon !== '' && op.selected >= 0) {
             op.icon = icon;
             if (op.inline === false) {
                 var v = op.icons[op.selected];
+
                 el.find('input').val(icon);
                 el
                     .find('i')
                     .attr('class', '')
                     .html(
-                        '<i data-svg="true" class="' + op.iconClass + ' ' + op.iconClassFix + v + '">' +
-                            '<span class="djangocms-svg-icon ' + op.iconClass + ' ' + op.iconClassFix + v + '">' +
+                        '<span data-svg="true" class="' + op.iconClass + ' ' + v + '">' +
+                            '<span class="djangocms-svg-icon ' + op.iconClass + ' ' + v + '">' +
                                 (op.spritePath ? (
                                 '<svg role="presentation">' +
                                 '<use xlink:href="' + staticUrl + op.spritePath + '#' + v + '"></use></svg>' ) : '') +
                             '</span>' +
-                        '</i>'
+                        '</span>'
                     );
             }
             if (icon === op.iconClassFix) {
@@ -97,7 +99,7 @@ $.fn.iconpicker.Constructor.prototype.updateIcons = override($.fn.iconpicker.Con
                         .val(v)
                         .attr('title', v)
                         .append(
-                            '<span class="djangocms-svg-icon ' + op.iconClass + ' ' + op.iconClassFix + v + '">' +
+                            '<span class="djangocms-svg-icon ' + op.iconClass + ' ' + v + '">' +
                                 (op.spritePath ? (
                                 '<svg role="presentation">' +
                                 '<use xlink:href="' + staticUrl + op.spritePath + '#' + v + '"></use></svg>' ) : '') +
