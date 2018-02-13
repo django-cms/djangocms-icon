@@ -3,10 +3,11 @@ Changelog
 =========
 
 
-1.0.0 (unreleased)
+1.0.0 (2018-02-13)
 ==================
 
 * Proper release on Divio Marketplace
+* Updated translations
 * Removed newline from ``*icon.html``
 * Fixed bugs in the icon widget
 
