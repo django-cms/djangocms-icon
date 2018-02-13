@@ -3,9 +3,10 @@ Changelog
 =========
 
 
-0.2.1 (unreleased)
+1.0.0 (unreleased)
 ==================
 
+* Proper release on Divio Marketplace
 * Removed newline from ``*icon.html``
 * Fixed bugs in the icon widget
 
