@@ -6,8 +6,8 @@ from djangocms_icon import __version__
 
 
 REQUIREMENTS = [
-    'django-cms>=3.3.1',
-    'djangocms-attributes-field>=0.1.1',
+    'django-cms>=3.4.5',
+    'djangocms-attributes-field>=0.4.0',
 ]
 
 
@@ -38,7 +38,7 @@ setup(
     author_email='info@divio.com',
     url='https://github.com/divio/djangocms-icon',
     license='BSD',
-    description=('Adds icon plugin to django CMS.'),
+    description='Adds icon plugin to django CMS.',
     long_description=open('README.rst').read(),
     packages=find_packages(),
     include_package_data=True,
