@@ -5,7 +5,9 @@ sudo: false
 env:
   - TOX_ENV=flake8
   # Django 1.11
+  - TOX_ENV=py27-dj111-cms34
   - TOX_ENV=py27-dj111-cms35
+  - TOX_ENV=py35-dj111-cms34
   - TOX_ENV=py35-dj111-cms35
   # Django 2.0
   - TOX_ENV=py35-dj20-cms35
