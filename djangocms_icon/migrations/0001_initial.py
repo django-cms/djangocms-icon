@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import django.db.models.deletion
 from django.db import migrations, models
 import djangocms_icon.fields
 import djangocms_attributes_field.fields
@@ -18,7 +19,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Icon',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(to='cms.CMSPlugin', related_name='djangocms_icon_icon', primary_key=True, serialize=False, parent_link=True, auto_created=True)),
+                ('cmsplugin_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='cms.CMSPlugin', related_name='djangocms_icon_icon', primary_key=True, serialize=False, parent_link=True, auto_created=True)),
                 ('icon', djangocms_icon.fields.Icon(max_length=255, default='', verbose_name='Icon', blank=True)),
                 ('template', models.CharField(max_length=255, default=get_templates()[0][0], verbose_name='Template', choices=get_templates())),
                 ('label', models.CharField(max_length=255, verbose_name='Label', blank=True)),
