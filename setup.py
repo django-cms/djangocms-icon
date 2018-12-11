@@ -4,7 +4,6 @@ from setuptools import find_packages, setup
 
 from djangocms_icon import __version__
 
-
 REQUIREMENTS = [
     'django-cms>=3.4.5',
     'djangocms-attributes-field>=0.4.0',
@@ -40,7 +39,7 @@ setup(
     license='BSD',
     description='Adds icon plugin to django CMS.',
     long_description=open('README.rst').read(),
-    packages=find_packages(),
+    packages=find_packages(exclude=['tests']),
     include_package_data=True,
     zip_safe=False,
     install_requires=REQUIREMENTS,
