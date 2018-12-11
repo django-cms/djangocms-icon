@@ -153,7 +153,7 @@ django CMS Icon also supports SVG icons. Follow the instructions from
 also need to add an icon template to your project to render it correctly,
 for example::
 
-    <span class="icon icon-{{ instance.icon }}">
+    <span class="{{ instance.icon|iconset_from_class }} {{ instance.icon }} {{ instance.attributes.class }}">
         <svg role="presentation">
             <use xlink:href="{% static 'sprites/icons.svg' %}#{{ instance.icon }}"></use>
         </svg>
