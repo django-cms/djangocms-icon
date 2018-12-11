@@ -50,6 +50,14 @@ For a manual install:
 Configuration
 -------------
 
+This addon provides a ``default`` template for all instances. You can provide
+additional template choices by adding a ``DJANGOCMS_ICON_TEMPLATES``
+setting::
+
+    DJANGOCMS_ICON_TEMPLATES = [
+        ('svg', 'SVG template'),
+    ]
+
 Web Font Icons
 ##############
 
@@ -134,7 +142,6 @@ django CMS Icon also supports SVG icons. Follow the instructions from
         "svg": true,
         "spritePath": "sprites/icons.svg",
         "iconClass": "icon",
-        "iconClassFix": "icon-",
         "icons": [
             "icon-icon1",
             "icon-icon2",
@@ -143,7 +150,14 @@ django CMS Icon also supports SVG icons. Follow the instructions from
     }
 
 ``svg`` and ``spritePath`` are the only required additional properties. You
-may need to define ``iconClassFix`` depending on your SVG setup.
+also need to add an icon template to your project to render it correctly,
+for example::
+
+    <span class="icon icon-{{ instance.icon }}">
+        <svg role="presentation">
+            <use xlink:href="{% static 'sprites/icons.svg' %}#{{ instance.icon }}"></use>
+        </svg>
+    </span>
 
 
 Running Tests
