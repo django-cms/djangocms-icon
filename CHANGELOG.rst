@@ -2,6 +2,15 @@
 Changelog
 =========
 
+1.2.0 (unreleased)
+==================
+
+* Added documentation on how to configure web fonts, custom web fonts and
+  custom SVG icons
+* Updated icon picker library to latest version and include more icon sets
+* Fixed test matrix
+* Exclude ``tests`` folder from release build
+
 
 1.1.0 (2018-11-20)
 ==================

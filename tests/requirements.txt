@@ -1,6 +1,6 @@
 # requirements from setup.py
 djangocms-attributes-field>=0.4.0
 # other requirements
-djangocms-helper>=1.1.0,<1.2.0
+djangocms-helper
 tox
 coverage
