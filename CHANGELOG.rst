@@ -2,7 +2,7 @@
 Changelog
 =========
 
-1.2.0 (unreleased)
+1.2.0 (2018-12-12)
 ==================
 
 * Added documentation on how to configure web fonts, custom web fonts and
