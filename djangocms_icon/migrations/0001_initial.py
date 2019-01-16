@@ -3,9 +3,10 @@ from __future__ import unicode_literals
 
 import django.db.models.deletion
 from django.db import migrations, models
-import djangocms_icon.fields
+
 import djangocms_attributes_field.fields
 
+import djangocms_icon.fields
 from djangocms_icon.models import get_templates
 
 
