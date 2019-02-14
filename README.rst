@@ -49,6 +49,20 @@ For a manual install:
 * run ``python manage.py migrate djangocms_icon``
 
 
+**A note about django CMS Text CKEditor**
+
+There are additional steps required for the icon plugin to display correctly
+inside CKEditor.
+
+1. You need to make sure your icon CSS is passed via CKEditors ``contentsCss``
+`parameter <https://github.com/divio/djangocms-text-ckeditor/blob/175a1a444de8ca1ba4742196cb83150d45b5c505/aldryn_config.py#L36>`_.
+On Divio Cloud this can be done through the Addons configuration.
+
+2. CKEditor automatically removes empty tags, you can prevent this by adding
+a `javascript configuration file <https://github.com/divio/djangocms-boilerplate-webpack/blob/master/static/js/addons/ckeditor.wysiwyg.js#L68>`_
+to ``style_set``.
+
+
 Configuration
 -------------
 
