@@ -6,6 +6,7 @@ Changelog
 1.2.1 (unreleased)
 ==================
 
+* Fixed an issue where Font Awesome is not rendered on a clean install
 * Extended test matrix
 * Added isort and adapted imports
 * Adapted code base to align with other supported addons
