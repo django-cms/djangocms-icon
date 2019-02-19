@@ -5,12 +5,21 @@ from django.conf import settings
 from django.db import models
 from django.forms import fields, widgets
 from django.utils.translation import ugettext
+from django.template.loader import render_to_string
 
 
 def get_iconsets():
-    return getattr(settings, 'DJANGOCMS_ICON_SETS', (
-        ('fontawesome', 'fa', 'Font Awesome'),
+    iconsets = getattr(settings, 'DJANGOCMS_ICON_SETS', (
+        ('fontawesome5solid', 'fas', 'Font Awesome 5 Solid', 'lastest'),
     ))
+
+    set = []
+    for iconset in iconsets:
+        if len(iconset) == 3:
+            iconset = iconset + ('lastest',)
+        set.append(iconset)
+
+    return tuple(set)
 
 
 class IconFieldWidget(widgets.TextInput):
@@ -25,28 +34,41 @@ class IconFieldWidget(widgets.TextInput):
         )
 
     def render(self, name, value, attrs=None, **kwargs):
-        input_html = super(IconFieldWidget, self).render(name, value, attrs=attrs, **kwargs)
         if value is None:
             value = ''
-        iconset = value.split('-')[0] if value and '-' in value else ''
+
         iconsets = get_iconsets()
-        iconset_prefixes = [s[1] for s in iconsets]
-        if len(iconsets) and iconset not in iconset_prefixes:
-            # invalid iconset! maybe because the iconset was removed from
-            # the project. set it to the first in the list.
-            iconset = iconsets[0][1]
-        from django.template.loader import render_to_string
+        set = iconsets[0]
+
+        if value:
+            segments = value.split(None, 1)
+            value = segments[1]
+            selected_set = None
+
+            for iconset in iconsets:
+                if iconset[1] == segments[0]:
+                    selected_set = iconset
+                    break
+
+            set = set if selected_set is None else selected_set
+
+        iconset = set[0]
+        prefix = set[1]
+        version = set[3]
+
         rendered = render_to_string(
             'admin/djangocms_icon/widgets/icon.html',
             {
-                'input_html': input_html,
                 'value': value,
                 'name': name,
                 'iconset': iconset,
+                'version': version,
+                'prefix': prefix,
                 'is_required': self.is_required,
                 'iconsets': iconsets,
             },
         )
+
         return rendered
 
 

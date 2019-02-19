@@ -3,15 +3,16 @@ import './icon-picker';
 
 export default class IconWidget {
     constructor (element) {
-        var data = element.data();
-        var name = data.name;
-        var iconPicker = element.find('.js-icon-' + name + ' .js-icon-picker');
-        var iconSet = element.find('.js-icon-' + name + ' .js-iconset');
-        var enableIconCheckbox = element.find('.js-icon-' + name + ' .js-icon-enable');
-        var widgets = element.find('.js-icon-' + name + ' .js-icon-widgets');
-        var iconPickerButton = iconPicker.find('button');
-        var initialValue = iconPickerButton.data('icon');
-        var initialIconset = iconSet.find('option[data-prefix=' + data.iconset + ']').attr('value');
+        var data = element.data(),
+            name = data.name,
+            iconPicker = element.find('.js-icon-' + name + ' .js-icon-picker'),
+            iconSet = element.find('.js-icon-' + name + ' .js-iconset'),
+            enableIconCheckbox = element.find('.js-icon-' + name + ' .js-icon-enable'),
+            widgets = element.find('.js-icon-' + name + ' .js-icon-widgets'),
+            iconPickerButton = iconPicker.find('button'),
+            initialValue = iconPickerButton.data('icon'),
+            initialIconset = iconSet.find('option[data-prefix=' + data.iconset + ']').attr('value'),
+            initialVersion = iconSet.find('option[data-version=' + data.iconset + ']').attr('value');
 
         try {
             // in case custom iconset is used
@@ -40,12 +41,19 @@ export default class IconWidget {
 
         // set correct iconset when switching the font via dropdown
         iconSet.on('change', function () {
-            var iconset = $(this).val();
+            var select = $(this),
+                iconset = select.val(),
+                selected = select.find(':selected'),
+                version = selected.data('iconset-version'),
+                prefix = selected.data('iconset-prefix');
 
             try {
                 iconset = JSON.parse(iconset);
             } catch (e) {}
 
+            iconPicker.find('input[name=iconset]').val(iconset);
+            iconPicker.find('input[name=prefix]').val(prefix);
+            iconPickerButton.iconpicker('setVersion', version);
             iconPickerButton.iconpicker('setIconset', iconset);
         });
 
