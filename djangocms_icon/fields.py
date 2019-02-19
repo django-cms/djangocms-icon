@@ -10,7 +10,9 @@ from django.template.loader import render_to_string
 
 def get_iconsets():
     iconsets = getattr(settings, 'DJANGOCMS_ICON_SETS', (
+        ('fontawesome5regular', 'far', 'Font Awesome 5 Regular', 'lastest'),
         ('fontawesome5solid', 'fas', 'Font Awesome 5 Solid', 'lastest'),
+        ('fontawesome5brands', 'fab', 'Font Awesome 5 Brands', 'lastest'),
     ))
 
     set = []
