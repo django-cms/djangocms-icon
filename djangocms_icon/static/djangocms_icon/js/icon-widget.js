@@ -3,7 +3,7 @@ import './icon-picker';
 
 export default class IconWidget {
     constructor (element) {
-        var data = element.data(),
+        let data = element.data(),
             name = data.name,
             iconPicker = element.find('.js-icon-' + name + ' .js-icon-picker'),
             iconSet = element.find('.js-icon-' + name + ' .js-iconset'),
@@ -40,7 +40,7 @@ export default class IconWidget {
 
         // set correct iconset when switching the font via dropdown
         iconSet.on('change', function () {
-            var select = $(this),
+            let select = $(this),
                 iconset = select.val(),
                 selected = select.find(':selected'),
                 version = selected.data('iconset-version');
@@ -56,8 +56,8 @@ export default class IconWidget {
         });
 
         iconPickerButton.on('change', function() {
-            var value = iconPicker.find('i').attr('class');
-            iconPicker.children('input[name=icon]').val(value);
+            const options = iconPickerButton.data('bs.iconpicker').options;
+            iconPicker.children('input[name=icon]').val(options.iconClass + ' ' + options.icon);
         });
 
         // checkbox is shown if field is not required, switches visibility
@@ -65,14 +65,16 @@ export default class IconWidget {
         enableIconCheckbox.on('change', function () {
             if ($(this).prop('checked')) {
                 widgets.removeClass('hidden');
-                const val = iconPickerButton.data('bs.iconpicker').options.icon;
+                const options = iconPickerButton.data('bs.iconpicker').options;
 
-                if (val) {
-                    iconPickerButton.find('input').val(val).trigger('change');
+                if (options.icon) {
+                    iconPickerButton.find('input').val(options.icon).trigger('change');
+                    iconPicker.children('input[name=icon]').val(options.iconClass + ' ' + options.icon);
                 }
             } else {
                 widgets.addClass('hidden');
                 iconPickerButton.find('input').val('').trigger('change');
+                iconPicker.children('input[name=icon]').val('');
             }
         }).trigger('change');
     }
