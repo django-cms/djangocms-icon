@@ -11,14 +11,3 @@ class IconForm(forms.ModelForm):
     class Meta:
         model = Icon
         fields = ('label', 'icon', 'template', 'attributes',)
-
-    def clean(self):
-        self.cleaned_data['prefix'] = self.data.get('prefix')
-
-    def save(self, commit=True):
-        instance = super(IconForm, self).save(commit=False)
-        instance.icon = "{} {}".format(self.cleaned_data['prefix'], self.cleaned_data['icon'])
-        if commit:
-            instance.save()
-        return instance
-

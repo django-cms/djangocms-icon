@@ -11,8 +11,7 @@ export default class IconWidget {
             widgets = element.find('.js-icon-' + name + ' .js-icon-widgets'),
             iconPickerButton = iconPicker.find('button'),
             initialValue = iconPickerButton.data('icon'),
-            initialIconset = iconSet.find('option[data-prefix=' + data.iconset + ']').attr('value'),
-            initialVersion = iconSet.find('option[data-version=' + data.iconset + ']').attr('value');
+            initialIconset = iconSet.find('option[data-prefix=' + data.iconset + ']').attr('value');
 
         try {
             // in case custom iconset is used
@@ -44,17 +43,21 @@ export default class IconWidget {
             var select = $(this),
                 iconset = select.val(),
                 selected = select.find(':selected'),
-                version = selected.data('iconset-version'),
-                prefix = selected.data('iconset-prefix');
+                version = selected.data('iconset-version');
 
             try {
                 iconset = JSON.parse(iconset);
             } catch (e) {}
 
             iconPicker.find('input[name=iconset]').val(iconset);
-            iconPicker.find('input[name=prefix]').val(prefix);
+
             iconPickerButton.iconpicker('setVersion', version);
             iconPickerButton.iconpicker('setIconset', iconset);
+        });
+
+        iconPickerButton.on('change', function() {
+            var value = iconPicker.find('i').attr('class');
+            iconPicker.children('input[name=icon]').val(value);
         });
 
         // checkbox is shown if field is not required, switches visibility
