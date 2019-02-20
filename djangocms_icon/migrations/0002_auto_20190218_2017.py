@@ -3,8 +3,8 @@
 from __future__ import unicode_literals
 
 from django.db import migrations
-from django.db.models.functions import Concat
 from django.db.models import F, Func, Value
+from django.db.models.functions import Concat
 
 
 def forwards_func(apps, schema_editor):
