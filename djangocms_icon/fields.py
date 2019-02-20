@@ -4,8 +4,8 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db import models
 from django.forms import fields, widgets
-from django.utils.translation import ugettext
 from django.template.loader import render_to_string
+from django.utils.translation import ugettext
 
 
 def get_iconsets():
