@@ -116,7 +116,7 @@ You can also add the version number as a fourth parameter.
 If no parameter is given the latest version of the bootstrap-iconpicker icon set is used.::
 
     DJANGOCMS_ICON_SETS = [
-        ('fontawesome4', 'fa', 'Font Awesome 4', 4.0.0),
+        ('fontawesome4', 'fa', 'Font Awesome 4', '4.0.0'),
         ('fontawesome5light', 'fal', 'Font Awesome 5 Light', '5.3.1_pro'),
     ]
 
