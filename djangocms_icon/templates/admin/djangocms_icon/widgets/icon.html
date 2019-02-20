@@ -27,7 +27,7 @@
                     <button type="button" {% if is_required %} id="id_{{ name }}"{% endif %}
                         name="{{ name }}"
                         data-iconset="{{ iconset }}"
-                        data-version="{{ version }}"
+                        data-iconset-version="{{ version }}"
                         data-icon="{{ value }}">
                     </button>
                     <input type="hidden" name="icon" value="{{ prefix }} {{ value }}">
