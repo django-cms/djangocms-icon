@@ -405,6 +405,7 @@
         this.select(op.icon);
     };
 
+    // Custom addition to the library, needs to be copied when upgrading the library in the future.
     Iconpicker.prototype.setVersion = function (value) {
         this.options.iconsetVersion = value;
         this.reset();
