@@ -15,13 +15,13 @@ def get_iconsets():
         ('fontawesome5brands', 'fab', 'Font Awesome 5 Brands', 'lastest'),
     ))
 
-    set = []
+    current_iconsets = []
     for iconset in iconsets:
         if len(iconset) == 3:
             iconset = iconset + ('lastest',)
-        set.append(iconset)
+        current_iconsets.append(iconset)
 
-    return tuple(set)
+    return tuple(current_iconsets)
 
 
 class IconFieldWidget(widgets.TextInput):
@@ -40,32 +40,28 @@ class IconFieldWidget(widgets.TextInput):
             value = ''
 
         iconsets = get_iconsets()
-        set = iconsets[0]
+        active_iconset = iconsets[0]
 
         if value:
             segments = value.split(None, 1)
             value = segments[1]
-            selected_set = None
+            selected_iconset = None
 
             for iconset in iconsets:
                 if iconset[1] == segments[0]:
-                    selected_set = iconset
+                    selected_iconset = iconset
                     break
 
-            set = set if selected_set is None else selected_set
-
-        iconset = set[0]
-        prefix = set[1]
-        version = set[3]
+            active_iconset = active_iconset if selected_iconset is None else selected_iconset
 
         rendered = render_to_string(
             'admin/djangocms_icon/widgets/icon.html',
             {
                 'value': value,
                 'name': name,
-                'iconset': iconset,
-                'version': version,
-                'prefix': prefix,
+                'iconset': active_iconset[0],
+                'version': active_iconset[3],
+                'prefix': active_iconset[1],
                 'is_required': self.is_required,
                 'iconsets': iconsets,
             },
