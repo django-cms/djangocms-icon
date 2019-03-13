@@ -3,12 +3,14 @@ Changelog
 =========
 
 
-1.2.1 (unreleased)
+1.3.0 (2019-03-13)
 ==================
 
+* Added support for Font Awesome 5
+* Added support for custom data iconset
+* Added isort and adapted imports
 * Fixed an issue where Font Awesome is not rendered on a clean install
 * Extended test matrix
-* Added isort and adapted imports
 * Adapted code base to align with other supported addons
 
 
