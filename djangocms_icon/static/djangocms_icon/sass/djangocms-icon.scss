@@ -9,6 +9,36 @@
         border-right: 4px solid transparent;
         border-left:  4px solid transparent;
     }
+    .icon-widgets {
+        display: flex;
+        align-items: center;
+
+        label {
+            display: inline !important;
+        }
+        .form-control {
+            padding-right: 30px;
+        }
+        .iconpicker i {
+            padding-right: 5px;
+        }
+    }
+    select {
+        margin: 0;
+        vertical-align: top;
+
+        &.form-control {
+            width: auto !important;
+        }
+    }
+    button.iconpicker {
+        height: 36px;
+        font-size: 20px !important;
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+        display: inline-flex;
+        align-items: center;
+    }
 }
 
 .djangocms-icon-left {
@@ -23,8 +53,8 @@
 }
 .iconpicker-popover {
     .form-control {
-        line-height: 34px;;
-        height: 34px;;
+        line-height: 34px;
+        height: 34px;
     }
     .text-center {
         text-align: center;
@@ -73,44 +103,23 @@
         border-radius: 4px;
     }
 }
-.djangocms-icon select.form-control {
-    width: auto !important;
-}
-.djangocms-icon .icon-widgets label {
-    display: inline !important;
-}
-.djangocms-icon select {
-    margin: 0;
-    vertical-align: top;
-}
-.djangocms-icon .icon-widgets {
-    display: flex;
-    align-items: center;
-}
-.djangocms-icon button.iconpicker {
-    height: 36px;
-    font-size: 20px !important;
-    padding-right: 10px !important;
-    padding-left: 10px !important;
-    display: inline-flex;
-    align-items: center;
-}
 
-.iconpicker-popover .search-control {
-    width: 100% !important;
-}
-.iconpicker-popover table tfoot tr td {
-   padding-top: 10px;
-   border-top: 0;
-   background: none;
-}
-.iconpicker-popover .page-count {
-    display: inline-block;
-    padding-top: 12px;
-}
-
-.iconpicker-popover .fa- {
-    width: 14px;
+.iconpicker-popover {
+    .search-control {
+        width: 100% !important;
+    }
+    table tfoot tr td {
+       padding-top: 10px;
+       border-top: 0;
+       background: none;
+    }
+    .page-count {
+        display: inline-block;
+        padding-top: 12px;
+    }
+    .fa- {
+        width: 14px;
+    }
 }
 
 .icon[data-svg="true"] {
@@ -118,29 +127,30 @@
         content: none !important;
     }
 }
-.djangocms-svg-icon:before {
-    content: none !important;
-}
 .djangocms-svg-icon {
     font-size: 20px;
-}
-.djangocms-svg-icon svg {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    vertical-align: top;
-}
-.table-icons .disabled {
-    /*
-     work around the bug in the icon picker when disabled buttons could
-     be clicked which would result in icon page overflow errors
-     */
-    pointer-events: none !important;
-}
 
+    &:before {
+        content: none !important;
+    }
+    svg {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        vertical-align: top;
+    }
+}
 .table-icons {
+    .disabled {
+        /*
+         work around the bug in the icon picker when disabled buttons could
+         be clicked which would result in icon page overflow errors
+         */
+        pointer-events: none !important;
+    }
     .btn {
         width: 72px !important;
+        height: 42px !important;
         font-size: 20px !important;
 
         .icon {

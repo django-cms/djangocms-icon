@@ -3,7 +3,7 @@ import IconWidget from './icon-widget';
 
 window.djangoCMSIcon = {
     $
-}
+};
 
 $(() => {
     const widgets = $('.djangocms-icon');

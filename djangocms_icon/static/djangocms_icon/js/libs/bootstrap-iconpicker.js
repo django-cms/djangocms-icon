@@ -1,6 +1,12 @@
 /*!========================================================================
- * File: bootstrap-iconpicker.js
- * ======================================================================== */
+* File: bootstrap-iconpicker.js v1.10.0 by @victor-valencia
+* https://victor-valencia.github.com/bootstrap-iconpicker
+* ========================================================================
+* Copyright 2013-2018 Victor Valencia Rico.
+* Licensed under MIT license.
+* https://github.com/victor-valencia/bootstrap-iconpicker/blob/master/LICENSE
+* ========================================================================
+*/
 
 ;(function($){ "use strict";
 
@@ -36,9 +42,11 @@
         _custom: null,
         elusiveicon: $.iconset_elusiveicon || Iconpicker.ICONSET_EMPTY,
         flagicon: $.iconset_flagicon || Iconpicker.ICONSET_EMPTY,
-        fontawesome: $.iconset_fontawesome || Iconpicker.ICONSET_EMPTY,
         fontawesome4: $.iconset_fontawesome_4 || Iconpicker.ICONSET_EMPTY,
-        fontawesome5: $.iconset_fontawesome_5 || Iconpicker.ICONSET_EMPTY,
+        fontawesome5brands: $.iconset_fontawesome_5_brands || Iconpicker.ICONSET_EMPTY,
+        fontawesome5regular: $.iconset_fontawesome_5_regular || Iconpicker.ICONSET_EMPTY,
+        fontawesome5solid: $.iconset_fontawesome_5_solid || Iconpicker.ICONSET_EMPTY,
+        fontawesome5light: $.iconset_fontawesome_5_light || Iconpicker.ICONSET_EMPTY,
         glyphicon: $.iconset_glyphicon || Iconpicker.ICONSET_EMPTY,
         ionicon: $.iconset_ionicon || Iconpicker.ICONSET_EMPTY,
         mapicon: $.iconset_mapicon || Iconpicker.ICONSET_EMPTY,
@@ -57,7 +65,7 @@
         arrowPrevIconClass: 'fas fa-arrow-left',
         cols: 4,
         icon: '',
-        iconset: 'fontawesome',
+        iconset: 'fontawesome5',
         iconsetVersion: 'lastest',
         header: true,
         labelHeader: '{0} / {1}',
@@ -395,6 +403,12 @@
         op = $.extend(op, Iconpicker.ICONSET[op.iconset]);
         this.reset();
         this.select(op.icon);
+    };
+
+    // Custom addition to the library, needs to be copied when upgrading the library in the future.
+    Iconpicker.prototype.setVersion = function (value) {
+        this.options.iconsetVersion = value;
+        this.reset();
     };
 
     Iconpicker.prototype.setLabelHeader = function (value) {

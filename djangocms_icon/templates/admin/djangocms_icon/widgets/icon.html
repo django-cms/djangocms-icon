@@ -2,8 +2,7 @@
 {% include "admin/djangocms_icon/includes/assets.html" %}
 
 <div class="djangocms-icon"
-    data-name="{{ name }}"
-    data-iconset="{{ iconset }}">
+    data-name="{{ name }}">
     {% if not iconsets %}
         <div class="alert alert-danger">
             {% trans "No Iconsets configured. Please configure at least one Iconset before using this widget." %}
@@ -18,8 +17,8 @@
             <span class="icon-widgets js-icon-widgets{% if not is_required %} hidden{% endif %}">
                 <label>
                     <select class="form-control js-iconset">
-                        {% for iconpicker_iconset, prefix, verbose_name in iconsets %}
-                            <option value="{{ iconpicker_iconset }}" data-prefix="{{ prefix }}"{% if iconset == prefix %} selected="selected"{% endif %}>{{ verbose_name }}</option>
+                        {% for iconpicker_iconset, iconset_prefix, verbose_name, iconset_version in iconsets %}
+                            <option value="{{ iconpicker_iconset }}" data-iconset-version="{{ iconset_version }}" data-iconset-prefix="{{ iconset_prefix }}"{% if iconset == iconpicker_iconset %} selected="selected"{% endif %}>{{ verbose_name }}</option>
                         {% endfor %}
                     </select>
                 </label>
@@ -28,8 +27,10 @@
                     <button type="button" {% if is_required %} id="id_{{ name }}"{% endif %}
                         name="{{ name }}"
                         data-iconset="{{ iconset }}"
+                        data-iconset-version="{{ version }}"
                         data-icon="{{ value }}">
                     </button>
+                    <input type="hidden" name="icon" value="{{ prefix }} {{ value }}">
                 </label>
             </span>
         </div>

@@ -4,13 +4,24 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db import models
 from django.forms import fields, widgets
+from django.template.loader import render_to_string
 from django.utils.translation import ugettext
 
 
 def get_iconsets():
-    return getattr(settings, 'DJANGOCMS_ICON_SETS', (
-        ('fontawesome', 'fa', 'Font Awesome'),
+    iconsets = getattr(settings, 'DJANGOCMS_ICON_SETS', (
+        ('fontawesome5regular', 'far', 'Font Awesome 5 Regular', 'lastest'),
+        ('fontawesome5solid', 'fas', 'Font Awesome 5 Solid', 'lastest'),
+        ('fontawesome5brands', 'fab', 'Font Awesome 5 Brands', 'lastest'),
     ))
+
+    current_iconsets = []
+    for iconset in iconsets:
+        if len(iconset) == 3:
+            iconset = iconset + ('lastest',)
+        current_iconsets.append(iconset)
+
+    return tuple(current_iconsets)
 
 
 class IconFieldWidget(widgets.TextInput):
@@ -25,28 +36,37 @@ class IconFieldWidget(widgets.TextInput):
         )
 
     def render(self, name, value, attrs=None, **kwargs):
-        input_html = super(IconFieldWidget, self).render(name, value, attrs=attrs, **kwargs)
         if value is None:
             value = ''
-        iconset = value.split('-')[0] if value and '-' in value else ''
+
         iconsets = get_iconsets()
-        iconset_prefixes = [s[1] for s in iconsets]
-        if len(iconsets) and iconset not in iconset_prefixes:
-            # invalid iconset! maybe because the iconset was removed from
-            # the project. set it to the first in the list.
-            iconset = iconsets[0][1]
-        from django.template.loader import render_to_string
+        active_iconset = iconsets[0]
+
+        if value:
+            segments = value.split(None, 1)
+            value = segments[1]
+            selected_iconset = None
+
+            for iconset in iconsets:
+                if iconset[1] == segments[0]:
+                    selected_iconset = iconset
+                    break
+
+            active_iconset = active_iconset if selected_iconset is None else selected_iconset
+
         rendered = render_to_string(
             'admin/djangocms_icon/widgets/icon.html',
             {
-                'input_html': input_html,
                 'value': value,
                 'name': name,
-                'iconset': iconset,
+                'iconset': active_iconset[0],
+                'version': active_iconset[3],
+                'prefix': active_iconset[1],
                 'is_required': self.is_required,
                 'iconsets': iconsets,
             },
         )
+
         return rendered
 
 

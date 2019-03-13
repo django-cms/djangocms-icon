@@ -96,8 +96,28 @@ The icon picker supports `numerous font libraries <http://victor-valencia.github
 out of the box. You can also add multiple font sets like this::
 
     DJANGOCMS_ICON_SETS = [
-        ('fontawesome5', 'fa', 'Font Awesome'),
+        ('elusiveicon', 'el', 'Elusive Icons'),
+        ('flagicon', 'flag-icon', 'Flag Icons'),
+        ('fontawesome4', 'fa', 'Font Awesome 4'),
+        ('fontawesome5regular', 'far', 'Font Awesome 5 Regular'),
+        ('fontawesome5solid', 'fas', 'Font Awesome 5 Solid'),
+        ('fontawesome5brands', 'fab', 'Font Awesome 5 Brands'),
+        ('fontawesome5light', 'fal', 'Font Awesome 5 Light', '5.3.1_pro'),
+        ('glyphicon', 'glyphicon', 'Glyphicons'),
+        ('ionicon', 'ion', 'Ionicons Icons'),
+        ('mapicon', 'map-icon', 'Map Icons'),
         ('materialdesign', 'zmdi', 'Material Design'),
+        ('octicon', 'octicon', 'Octicons'),
+        ('typicon', 'typcn', 'Typicons'),
+        ('weathericon', 'wi', 'Weather Icons'),
+    ]
+
+You can also add the version number as a fourth parameter.
+If no parameter is given the latest version of the bootstrap-iconpicker icon set is used.::
+
+    DJANGOCMS_ICON_SETS = [
+        ('fontawesome4', 'fa', 'Font Awesome 4', '4.0.0'),
+        ('fontawesome5light', 'fal', 'Font Awesome 5 Light', '5.3.1_pro'),
     ]
 
 Just don't forget to include both libraries in the ``assets.html`` file.
@@ -169,7 +189,7 @@ django CMS Icon also supports SVG icons. Follow the instructions from
 also need to add an icon template to your project to render it correctly,
 for example::
 
-    <span class="{{ instance.icon|iconset_from_class }} {{ instance.icon }} {{ instance.attributes.class }}">
+    <span class="{{ instance.icon }} {{ instance.attributes.class }}">
         <svg role="presentation">
             <use xlink:href="{% static 'sprites/icons.svg' %}#{{ instance.icon }}"></use>
         </svg>
