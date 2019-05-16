@@ -9,6 +9,7 @@ Changelog
 * Added support for Django 2.2 and django CMS 3.7
 * Removed support for Django 2.0
 * Extended test matrix
+* Fixes an issue when using multiple icons on different models #20
 
 
 1.3.0 (2019-03-13)
