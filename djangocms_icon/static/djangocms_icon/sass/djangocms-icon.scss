@@ -51,6 +51,11 @@
         content: '→';
     }
 }
+// for Django 2
+.field-icon_left {
+    min-width: 300px;
+}
+
 .iconpicker-popover {
     .form-control {
         line-height: 34px;
