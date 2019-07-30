@@ -3,6 +3,12 @@ Changelog
 =========
 
 
+1.4.1 (unreleased)
+==================
+
+* Fixes an issue where icons are not rendered anymore
+
+
 1.4.0 (2019-05-22)
 ==================
 

@@ -2,7 +2,8 @@
 {% include "admin/djangocms_icon/includes/assets.html" %}
 
 <div class="djangocms-icon"
-    data-name="{{ name }}">
+    data-name="{{ name }}"
+    data-iconset="{{ iconset }}">
     {% if not iconsets %}
         <div class="alert alert-danger">
             {% trans "No Iconsets configured. Please configure at least one Iconset before using this widget." %}
