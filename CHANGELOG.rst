@@ -3,6 +3,12 @@ Changelog
 =========
 
 
+1.4.1 (2019-07-31)
+==================
+
+* Fixes an issue where the icon widget throws a Javascript error
+
+
 1.4.0 (2019-05-22)
 ==================
 

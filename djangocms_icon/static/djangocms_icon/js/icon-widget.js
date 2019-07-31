@@ -3,20 +3,21 @@ import './icon-picker';
 
 export default class IconWidget {
     constructor (element) {
-        let data = element.data(),
-            name = data.name,
-            iconPicker = element.find('.js-icon-' + name + ' .js-icon-picker'),
-            iconSet = element.find('.js-icon-' + name + ' .js-iconset'),
-            enableIconCheckbox = element.find('.js-icon-' + name + ' .js-icon-enable'),
-            widgets = element.find('.js-icon-' + name + ' .js-icon-widgets'),
-            iconPickerButton = iconPicker.find('button'),
-            initialValue = iconPickerButton.data('icon'),
-            initialIconset = iconSet.find('option[data-prefix=' + data.iconset + ']').attr('value');
+        let data = element.data();
+        let name = data.name;
+        let iconPicker = element.find('.js-icon-' + name + ' .js-icon-picker');
+        let iconSet = element.find('.js-icon-' + name + ' .js-iconset');
+        let enableIconCheckbox = element.find('.js-icon-' + name + ' .js-icon-enable');
+        let widgets = element.find('.js-icon-' + name + ' .js-icon-widgets');
+        let iconPickerButton = iconPicker.find('button');
+        let initialValue = iconPickerButton.data('icon');
+        let initialIconset = data.iconset;
 
         try {
             // in case custom iconset is used
             initialIconset = JSON.parse(initialIconset);
         } catch (e) {
+            // ignore error for now
         }
 
         // initialize bootstrap iconpicker functionality

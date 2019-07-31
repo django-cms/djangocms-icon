@@ -81,12 +81,11 @@ The django CMS Icon plugin ships with **Font Awesome 4 as default**. This can
 be changed by overriding the following setting::
 
     DJANGOCMS_ICON_SETS = [
-        ('fontawesome', 'fa', 'Font Awesome'),
+        ('fontawesome4', 'fa', 'Font Awesome 4'),
     ]
 
-To use Font Awesome 5 in the above example; change the first parameter to
-``fontawesome5``, the second and third stay unchanged. The second defines the
-prefix of the icon class and the third the display name.
+To use Font Awesome 5 in the above example; see the options below form the
+``DJANGOCMS_ICON_SETS`` listed.
 
 In addition **you need to load** the resources for your fonts in
 ``/admin/djangocms_icon/includes/assets.html``. Add this file to your project
