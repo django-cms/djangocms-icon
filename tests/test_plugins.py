@@ -145,6 +145,8 @@ class IconPluginsTestCase(CMSTestCase):
             submission = self.client.post(request_url, data)
 
         self.assertEquals(response.status_code, 200)
+        self.assertContains(response, 'Font Awesome 4')
+        self.assertContains(response, 'Custom web font')
         self.assertContains(response, '<div class="djangocms-icon"')
         # plugin succeeded and the change page view is shown
         self.assertEquals(submission.status_code, 200)
@@ -182,6 +184,8 @@ class IconPluginsTestCase(CMSTestCase):
             submission = self.client.post(request_url, data)
 
         self.assertEquals(response.status_code, 200)
+        self.assertContains(response, 'Font Awesome 4')
+        self.assertContains(response, 'Custom svg font')
         self.assertContains(response, '<div class="djangocms-icon"')
         # plugin succeeded and the change page view is shown
         self.assertEquals(submission.status_code, 200)
