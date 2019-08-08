@@ -36,7 +36,6 @@ class IconFieldWidget(widgets.TextInput):
         )
 
     def render(self, name, value, attrs=None, **kwargs):  # pragma: no cover
-        print("name:", name, "value:", value)
         if value is None:
             value = ''
 
