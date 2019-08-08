@@ -18,7 +18,6 @@ class IconModelTestCase(TestCase):
         settings.DJANGOCMS_ICON_TEMPLATES = [("feature", "Feature")]
         self.assertEqual(get_templates(), [("default", "Default"), ("feature", "Feature")])
 
-
     def test_icon_instance(self):
         Icon.objects.create(
             icon="fa-heart",
