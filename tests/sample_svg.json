@@ -1,0 +1,9 @@
+{
+    "svg": true,
+    "spritePath": "sprites/icons.svg",
+    "iconClass": "svg_icon",
+    "icons": [
+        "icon-icon1",
+        "icon-icon2"
+    ]
+}

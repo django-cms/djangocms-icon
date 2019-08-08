@@ -6,7 +6,7 @@ from djangocms_icon import __version__
 
 
 REQUIREMENTS = [
-    'django-cms>=3.4.5',
+    # 'django-cms>=3.4.5',
     'djangocms-attributes-field>=0.4.0',
 ]
 

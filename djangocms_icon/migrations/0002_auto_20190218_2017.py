@@ -20,7 +20,7 @@ def forwards_func(apps, schema_editor):
     icon.objects.filter(icon__startswith='wi-').update(icon=Concat(Value('wi '), 'icon'))
 
 
-def reverse_func(apps, schema_editor):
+def reverse_func(apps, schema_editor):  # pragma: no cover
     icon = apps.get_model('djangocms_icon', 'Icon')
 
     icon.objects.filter(icon__startswith='el ').update(icon=Func(F('icon'), Value('el '), Value(''), function='replace',))
