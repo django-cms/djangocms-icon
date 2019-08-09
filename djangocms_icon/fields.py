@@ -35,7 +35,7 @@ class IconFieldWidget(widgets.TextInput):
             'djangocms_icon/js/dist/bundle.icon.min.js',
         )
 
-    def render(self, name, value, attrs=None, **kwargs):
+    def render(self, name, value, attrs=None, **kwargs):  # pragma: no cover
         if value is None:
             value = ''
 

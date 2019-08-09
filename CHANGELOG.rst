@@ -3,6 +3,13 @@ Changelog
 =========
 
 
+1.4.2 (unreleased)
+==================
+
+* Added further tests to raise coverage
+* Fixed smaller issues found during testing
+
+
 1.4.1 (2019-07-31)
 ==================
 
