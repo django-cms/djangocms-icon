@@ -44,13 +44,19 @@ class IconFieldWidget(widgets.TextInput):
 
         if value:
             segments = value.split(None, 1)
-            value = segments[1]
             selected_iconset = None
 
-            for iconset in iconsets:
-                if iconset[1] == segments[0]:
-                    selected_iconset = iconset
-                    break
+            # check is in place for older iconset configurations where
+            # this would otherwise throw a "list range out of index" error
+            try:
+                value = segments[1]
+
+                for iconset in iconsets:
+                    if iconset[1] == segments[0]:
+                        selected_iconset = iconset
+                        break
+            except IndexError:
+                pass
 
             active_iconset = active_iconset if selected_iconset is None else selected_iconset
 

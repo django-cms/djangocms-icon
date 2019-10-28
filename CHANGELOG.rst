@@ -8,6 +8,7 @@ Changelog
 
 * Added further tests to raise coverage
 * Fixed smaller issues found during testing
+* Fixes an issue with older installations
 
 
 1.4.1 (2019-07-31)
