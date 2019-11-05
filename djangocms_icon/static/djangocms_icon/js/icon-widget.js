@@ -60,7 +60,7 @@ export default class IconWidget {
 
         iconPickerButton.on('change', function() {
             const options = iconPickerButton.data('bs.iconpicker').options;
-            iconPicker.children('input[name=' + data.name + ']').val(options.icon);
+            iconPicker.children('input[name=' + data.name + ']').val(options.iconClass + ' ' + options.icon);
         });
 
         // checkbox is shown if field is not required, switches visibility
