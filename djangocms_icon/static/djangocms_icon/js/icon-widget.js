@@ -27,7 +27,7 @@ export default class IconWidget {
             iconset: initialIconset,
             arrowNextIconClass: 'djangocms-icon-right',
             arrowPrevIconClass: 'djangocms-icon-left',
-            inline: true
+            inline: true,
         });
 
         // show label instead of dropdown if there is only one choice available
@@ -48,7 +48,9 @@ export default class IconWidget {
 
             try {
                 iconset = JSON.parse(iconset);
-            } catch (e) {}
+            } catch (e) {
+                // ignore error for now
+            }
 
             iconPicker.find('input[name=iconset]').val(iconset);
 

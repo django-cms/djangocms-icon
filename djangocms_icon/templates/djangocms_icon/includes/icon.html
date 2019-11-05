@@ -1,1 +1,1 @@
-{% load cms_tags %}<i class="{{ icon_class }}{% if instance.attributes.class %} {{ instance.attributes.class }}{% endif %}" aria-hidden="true"{% for key, value in instance.attributes.items %}{% if key != 'class' %}{{ key }}="{{ value }}" {% endif %}{% endfor %}></i>
+{% load cms_tags %}<i class="{{ instance.icon }}{% if instance.attributes.class %} {{ instance.attributes.class }}{% endif %}" aria-hidden="true"{% for key, value in instance.attributes.items %}{% if key != 'class' %}{{ key }}="{{ value }}" {% endif %}{% endfor %}></i>

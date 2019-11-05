@@ -2,7 +2,7 @@ import $ from 'jquery';
 import IconWidget from './icon-widget';
 
 window.djangoCMSIcon = {
-    $
+    $,
 };
 
 $(() => {
