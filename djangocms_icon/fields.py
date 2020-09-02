@@ -1,11 +1,8 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.conf import settings
 from django.db import models
 from django.forms import fields, widgets
 from django.template.loader import render_to_string
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 
 
 def get_iconsets():
@@ -87,7 +84,7 @@ class IconField(fields.CharField):
         kwargs.pop('max_length', None)
         kwargs.pop('widget', None)
         kwargs['widget'] = self.widget
-        super(IconField, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
 
 class Icon(models.CharField):
@@ -96,18 +93,18 @@ class Icon(models.CharField):
 
     def __init__(self, *args, **kwargs):
         if 'verbose_name' not in kwargs:
-            kwargs['verbose_name'] = ugettext('Icon')
+            kwargs['verbose_name'] = gettext('Icon')
         if 'max_length' not in kwargs:
             kwargs['max_length'] = 255
         if 'blank' not in kwargs:
             kwargs['blank'] = True
         if 'default' not in kwargs:
             kwargs['default'] = self.default_field_class.DEFAULT
-        super(Icon, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def formfield(self, **kwargs):
         defaults = {
             'form_class': self.default_field_class,
         }
         defaults.update(kwargs)
-        return super(Icon, self).formfield(**defaults)
+        return super().formfield(**defaults)
