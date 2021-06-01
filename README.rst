@@ -62,6 +62,8 @@ On Divio Cloud this can be done through the Addons configuration.
 a `javascript configuration file <https://github.com/divio/djangocms-boilerplate-webpack/blob/master/static/js/addons/ckeditor.wysiwyg.js#L68>`_
 to ``style_set``.
 
+django CMS Icon does not add the styles or javascript files to your frontend, these need to be added at your discretion.
+
 
 Configuration
 -------------
