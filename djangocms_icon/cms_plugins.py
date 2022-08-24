@@ -30,7 +30,7 @@ class IconPlugin(CMSPluginBase):
     ]
 
     def get_render_template(self, context, instance, placeholder):
-        return 'djangocms_icon/{}/icon.html'.format(instance.template)
+        return f'djangocms_icon/{instance.template}/icon.html'
 
 
 plugin_pool.register_plugin(IconPlugin)

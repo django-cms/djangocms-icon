@@ -3,7 +3,6 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from cms.models import CMSPlugin
-
 from djangocms_attributes_field.fields import AttributesField
 
 from .fields import Icon
