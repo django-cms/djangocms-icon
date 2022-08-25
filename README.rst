@@ -75,15 +75,15 @@ setting::
 Web Font Icons
 ##############
 
-The django CMS Icon plugin ships with **Font Awesome 4 as default**. This can
+The django CMS Icon plugin ships with **Font Awesome 5 as default**. This can
 be changed by overriding the following setting::
 
     DJANGOCMS_ICON_SETS = [
-        ('fontawesome4', 'fa', 'Font Awesome 4'),
+        ('fontawesome5regular', 'far', 'Font Awesome 5 Regular', 'lastest'),
+        ('fontawesome5solid', 'fas', 'Font Awesome 5 Solid', 'lastest'),
+        ('fontawesome5brands', 'fab', 'Font Awesome 5 Brands', 'lastest'),
     ]
 
-To use Font Awesome 5 in the above example; see the options below form the
-``DJANGOCMS_ICON_SETS`` listed.
 
 In addition **you need to load** the resources for your fonts in
 ``/admin/djangocms_icon/includes/assets.html``. Add this file to your project
@@ -95,7 +95,6 @@ out of the box. You can also add multiple font sets like this::
     DJANGOCMS_ICON_SETS = [
         ('elusiveicon', 'el', 'Elusive Icons'),
         ('flagicon', 'flag-icon', 'Flag Icons'),
-        ('fontawesome4', 'fa', 'Font Awesome 4'),
         ('fontawesome5regular', 'far', 'Font Awesome 5 Regular'),
         ('fontawesome5solid', 'fas', 'Font Awesome 5 Solid'),
         ('fontawesome5brands', 'fab', 'Font Awesome 5 Brands'),
