@@ -77,10 +77,10 @@ class IconPluginsTestCase(CMSTestCase):
             response = self.client.get(request_url)
             submission = self.client.post(request_url, data)
 
-        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
         self.assertContains(response, '<div class="djangocms-icon"')
         # plugin succeeded and the change page view is shown
-        self.assertEquals(submission.status_code, 200)
+        self.assertEqual(submission.status_code, 200)
         self.assertContains(submission, "Change a page")
         self.assertNotIn(b"Please correct the errors below.", submission.content)
 
@@ -106,10 +106,10 @@ class IconPluginsTestCase(CMSTestCase):
             response = self.client.get(request_url)
             submission = self.client.post(request_url, data)
 
-        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
         self.assertContains(response, '<div class="djangocms-icon"')
         # plugin succeeded and the change page view is shown
-        self.assertEquals(submission.status_code, 200)
+        self.assertEqual(submission.status_code, 200)
         self.assertContains(submission, "Change a page")
         self.assertNotIn(b"Please correct the errors below.", submission.content)
 
@@ -143,12 +143,12 @@ class IconPluginsTestCase(CMSTestCase):
             response = self.client.get(request_url)
             submission = self.client.post(request_url, data)
 
-        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Font Awesome 4')
         self.assertContains(response, 'Custom web font')
         self.assertContains(response, '<div class="djangocms-icon"')
         # plugin succeeded and the change page view is shown
-        self.assertEquals(submission.status_code, 200)
+        self.assertEqual(submission.status_code, 200)
         self.assertContains(submission, "Change a page")
         self.assertNotIn(b"Please correct the errors below.", submission.content)
 
@@ -182,11 +182,11 @@ class IconPluginsTestCase(CMSTestCase):
             response = self.client.get(request_url)
             submission = self.client.post(request_url, data)
 
-        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Font Awesome 4')
         self.assertContains(response, 'Custom svg font')
         self.assertContains(response, '<div class="djangocms-icon"')
         # plugin succeeded and the change page view is shown
-        self.assertEquals(submission.status_code, 200)
+        self.assertEqual(submission.status_code, 200)
         self.assertContains(submission, "Change a page")
         self.assertNotIn(b"Please correct the errors below.", submission.content)

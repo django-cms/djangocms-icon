@@ -2,15 +2,15 @@
 django CMS Icon
 ===============
 
-|pypi| |build| |coverage|
+|pypi| |coverage| |python| |django| |djangocms|
 
 **django CMS Icon** is a plugin for `django CMS <http://django-cms.org>`_
 that allows you to insert an icon (font or svg) into your project.
 
-.. note:: 
-        
+.. note::
+
         This project is endorsed by the `django CMS Association <https://www.django-cms.org/en/about-us/>`_.
-        That means that it is officially accepted by the dCA as being in line with our roadmap vision and development/plugin policy. 
+        That means that it is officially accepted by the dCA as being in line with our roadmap vision and development/plugin policy.
         Join us on `Slack <https://www.django-cms.org/slack/>`_.
 
 .. image:: preview.gif
@@ -22,8 +22,8 @@ Contribute to this project and win rewards
 
 Because this is a an open-source project, we welcome everyone to
 `get involved in the project <https://www.django-cms.org/en/contribute/>`_ and
-`receive a reward <https://www.django-cms.org/en/bounty-program/>`_ for their contribution. 
-Become part of a fantastic community and help us make django CMS the best CMS in the world.   
+`receive a reward <https://www.django-cms.org/en/bounty-program/>`_ for their contribution.
+Become part of a fantastic community and help us make django CMS the best CMS in the world.
 
 We'll be delighted to receive your
 feedback in the form of issues and pull requests. Before submitting your
@@ -33,14 +33,6 @@ pull request, please review our `contribution guidelines
 We're grateful to all contributors who have helped create and maintain this package.
 Contributors are listed at the `contributors <https://github.com/django-cms/djangocms-icon/graphs/contributors>`_
 section.
-
-Documentation
-=============
-
-See ``REQUIREMENTS`` in the `setup.py <https://github.com/divio/djangocms-icon/blob/master/setup.py>`_
-file for additional dependencies:
-
-|python| |django| |djangocms|
 
 
 Installation
@@ -214,14 +206,12 @@ You can run tests by executing::
 
 .. |pypi| image:: https://badge.fury.io/py/djangocms-icon.svg
     :target: http://badge.fury.io/py/djangocms-icon
-.. |build| image:: https://travis-ci.org/divio/djangocms-icon.svg?branch=master
-    :target: https://travis-ci.org/divio/djangocms-icon
-.. |coverage| image:: https://codecov.io/gh/divio/djangocms-icon/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/divio/djangocms-icon
+.. |coverage| image:: https://codecov.io/gh/django-cms/djangocms-icon/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/django-cms/djangocms-icon
 
-.. |python| image:: https://img.shields.io/badge/python-3.5+-blue.svg
+.. |python| image:: https://img.shields.io/badge/python-3.8+-blue.svg
     :target: https://pypi.org/project/djangocms-icon/
-.. |django| image:: https://img.shields.io/badge/django-2.2,%203.0,%203.1-blue.svg
+.. |django| image:: https://img.shields.io/badge/django-3.2,%204.0-blue.svg
     :target: https://www.djangoproject.com/
-.. |djangocms| image:: https://img.shields.io/badge/django%20CMS-3.7%2B-blue.svg
+.. |djangocms| image:: https://img.shields.io/badge/django%20CMS-3.9%2B-blue.svg
     :target: https://www.django-cms.org/

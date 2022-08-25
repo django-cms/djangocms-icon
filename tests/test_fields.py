@@ -25,7 +25,7 @@ class IconFieldTestCase(TestCase):
         self.assertEqual(get_iconsets(), ())
         settings.DJANGOCMS_ICON_SETS = [('glyphicon', 'glyphicon', 'Glyphicons')]
         self.assertEqual(get_iconsets(), (('glyphicon', 'glyphicon', 'Glyphicons', 'lastest'),))
-        # will append "lastest" for compatibility reasons
+        # will append "latest" for compatibility reasons
         settings.DJANGOCMS_ICON_SETS = [
             ('fontawesome5regular', 'far', 'Font Awesome 5 Regular'),
             ('fontawesome5solid', 'fas', 'Font Awesome 5 Solid'),
