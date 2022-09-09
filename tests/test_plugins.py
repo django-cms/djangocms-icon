@@ -7,26 +7,29 @@ from cms.api import add_plugin, create_page
 from cms.test_utils.testcases import CMSTestCase
 
 from djangocms_icon.cms_plugins import IconPlugin
+from .fixtures import TestFixture
 
 
-class IconPluginsTestCase(CMSTestCase):
+class IconPluginsTestCase(TestFixture, CMSTestCase):
 
     def setUp(self):
+        self.superuser = self.get_superuser()
         self.language = "en"
         self.home = create_page(
             title="home",
             template="page.html",
             language=self.language,
+            created_by=self.superuser,
         )
-        self.home.publish(self.language)
+        self.publish(self.home, self.language)
         self.page = create_page(
             title="content",
             template="page.html",
             language=self.language,
+            created_by=self.superuser,
         )
-        self.page.publish(self.language)
-        self.placeholder = self.page.placeholders.get(slot="content")
-        self.superuser = self.get_superuser()
+        self.publish(self.page, self.language)
+        self.placeholder = self.get_placeholders(self.page).get(slot="content")
 
     def tearDown(self):
         self.page.delete()
@@ -51,7 +54,7 @@ class IconPluginsTestCase(CMSTestCase):
             language=self.language,
             icon="fa-icon",
         )
-        self.page.publish(self.language)
+        self.publish(self.page, self.language)
         self.assertEqual(plugin.get_plugin_class_instance().name, "Icon")
 
         with self.login_user_context(self.superuser):
@@ -90,7 +93,7 @@ class IconPluginsTestCase(CMSTestCase):
             plugin_type=IconPlugin.__name__,
             language=self.language,
         )
-
+        print("URI", request_url)
         settings.DJANGOCMS_ICON_SETS = [
             ('fontawesome4', 'fa', 'Font Awesome 4'),
         ]

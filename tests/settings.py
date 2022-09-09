@@ -12,6 +12,15 @@ HELPER_SETTINGS = {
     'CMS_CONFIRM_VERSION4': True,
 }
 
+try:
+    import djangocms_versioning  # V4 test?
+
+    HELPER_SETTINGS["INSTALLED_APPS"] += [
+        "djangocms_versioning",
+    ]
+except ImportError:  # Nope
+    pass
+
 
 def run():
     from app_helper import runner
