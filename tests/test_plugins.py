@@ -3,7 +3,7 @@ import warnings
 
 from django.conf import settings
 
-from cms.api import add_plugin, create_page
+from cms.api import add_plugin
 from cms.test_utils.testcases import CMSTestCase
 
 from djangocms_icon.cms_plugins import IconPlugin
