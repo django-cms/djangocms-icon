@@ -12,8 +12,8 @@ HELPER_SETTINGS = {
     'CMS_CONFIRM_VERSION4': True,
 }
 
-try:
-    import djangocms_versioning  # V4 test?
+try:  # V4 test?
+    import djangocms_versioning  # noqa
 
     HELPER_SETTINGS["INSTALLED_APPS"] += [
         "djangocms_versioning",

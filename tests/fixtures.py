@@ -1,7 +1,7 @@
 from cms.api import create_page
 
 try:
-    import djangocms_versioning
+    import djangocms_versioning  # noqa
 
     DJANGO_CMS4 = True
 except ImportError:
