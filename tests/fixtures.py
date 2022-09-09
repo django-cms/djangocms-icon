@@ -11,12 +11,12 @@ except ImportError:
 class TestFixture:
     if DJANGO_CMS4:  # CMS V4
 
-        def _get_version(self, grouper, version_state, language=None):
+        def _get_version(self, page, version_state, language=None):
             language = language or self.language
 
             from djangocms_versioning.models import Version
 
-            versions = Version.objects.filter_by_grouper(grouper).filter(
+            versions = Version.objects.filter_by_grouper(page).filter(
                 state=version_state
             )
             for version in versions:
@@ -26,17 +26,17 @@ class TestFixture:
                 ):
                     return version
 
-        def publish(self, grouper, language=None):
+        def publish(self, page, language=None):
             from djangocms_versioning.constants import DRAFT
 
-            version = self._get_version(grouper, DRAFT, language)
+            version = self._get_version(page, DRAFT, language)
             if version is not None:
                 version.publish(self.superuser)
 
-        def unpublish(self, grouper, language=None):
+        def unpublish(self, page, language=None):
             from djangocms_versioning.constants import PUBLISHED
 
-            version = self._get_version(grouper, PUBLISHED, language)
+            version = self._get_version(page, PUBLISHED, language)
             if version is not None:
                 version.unpublish(self.superuser)
 

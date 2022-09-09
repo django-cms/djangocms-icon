@@ -15,18 +15,16 @@ class IconPluginsTestCase(TestFixture, CMSTestCase):
     def setUp(self):
         self.superuser = self.get_superuser()
         self.language = "en"
-        self.home = create_page(
+        self.home = self.create_page(
             title="home",
             template="page.html",
             language=self.language,
-            created_by=self.superuser,
         )
         self.publish(self.home, self.language)
-        self.page = create_page(
+        self.page = self.create_page(
             title="content",
             template="page.html",
             language=self.language,
-            created_by=self.superuser,
         )
         self.publish(self.page, self.language)
         self.placeholder = self.get_placeholders(self.page).get(slot="content")
@@ -93,7 +91,6 @@ class IconPluginsTestCase(TestFixture, CMSTestCase):
             plugin_type=IconPlugin.__name__,
             language=self.language,
         )
-        print("URI", request_url)
         settings.DJANGOCMS_ICON_SETS = [
             ('fontawesome4', 'fa', 'Font Awesome 4'),
         ]
