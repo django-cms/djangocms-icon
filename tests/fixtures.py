@@ -1,5 +1,6 @@
 from cms.api import create_page
 
+
 try:
     import djangocms_versioning  # noqa
 

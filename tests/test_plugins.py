@@ -7,6 +7,7 @@ from cms.api import add_plugin
 from cms.test_utils.testcases import CMSTestCase
 
 from djangocms_icon.cms_plugins import IconPlugin
+
 from .fixtures import TestFixture
 
 
