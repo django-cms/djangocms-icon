@@ -1,6 +1,6 @@
 /*!========================================================================
 * File: bootstrap-iconpicker.js v1.10.0 by @victor-valencia
-* https://victor-valencia.github.com/bootstrap-iconpicker
+* https://github.com/victor-valencia/bootstrap-iconpicker
 * ========================================================================
 * Copyright 2013-2018 Victor Valencia Rico.
 * Licensed under MIT license.

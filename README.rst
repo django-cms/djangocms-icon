@@ -2,7 +2,7 @@
 django CMS Icon
 ===============
 
-|pypi| |coverage| |python| |django| |djangocms|
+|pypi| |coverage| |python| |django| |djangocms| |djangocms4|
 
 **django CMS Icon** is a plugin for `django CMS <http://django-cms.org>`_
 that allows you to insert an icon (font or svg) into your project.
@@ -214,3 +214,5 @@ You can run tests by executing::
     :target: https://www.djangoproject.com/
 .. |djangocms| image:: https://img.shields.io/badge/django%20CMS-3.9%2B-blue.svg
     :target: https://www.django-cms.org/
+.. |djangocms4| image:: https://img.shields.io/badge/django%20CMS-4-blue.svg
+   :target: https://www.django-cms.org/en/preview-django-cms-40/

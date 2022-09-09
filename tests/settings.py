@@ -9,7 +9,17 @@ HELPER_SETTINGS = {
     },
     'LANGUAGE_CODE': 'en',
     'ALLOWED_HOSTS': ['localhost'],
+    'CMS_CONFIRM_VERSION4': True,
 }
+
+try:  # V4 test?
+    import djangocms_versioning  # noqa
+
+    HELPER_SETTINGS["INSTALLED_APPS"] += [
+        "djangocms_versioning",
+    ]
+except ImportError:  # Nope
+    pass
 
 
 def run():
