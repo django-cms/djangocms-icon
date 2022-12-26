@@ -4,10 +4,6 @@
 #
 #    pip-compile
 #
---trusted-host pypi.python.org
---trusted-host pypi.org
---trusted-host files.pythonhosted.org
-
 asgiref==3.5.2
     # via django
 build==0.8.0
@@ -46,13 +42,9 @@ sqlparse==0.4.2
     # via django
 toml==0.10.2
     # via pre-commit
-tomli==2.0.1
-    # via
-    #   build
-    #   pep517
 virtualenv==20.16.3
     # via pre-commit
-wheel==0.37.1
+wheel==0.38.1
     # via
     #   -r requirements.in
     #   pip-tools
