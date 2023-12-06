@@ -3,13 +3,25 @@ Changelog
 =========
 
 
-unreleased
-==========
+2.1.0 (2022-12-06)
+==================
 
-* Added support for Django 3.2 & 4
-* Dropped support for Python < 3.8
-* Dropped support for Django < 3.2
+## What's Changed
+* feat: Support for Django 4.2 and django CMS 3.11
+* Port github actions by @NarenderRajuB in https://github.com/django-cms/djangocms-icon/pull/34
+* IMPROVEMENT: Add note for JS and CSS Files by @crydotsnake in https://github.com/django-cms/djangocms-icon/pull/37
+* Create PULL_REQUEST_TEMPLATE.md by @Kaushal-Dhungel in https://github.com/django-cms/djangocms-icon/pull/39
+* FEATURE: adjust setup metadata by @crydotsnake in https://github.com/django-cms/djangocms-icon/pull/41
+* build: Update dependencies to modern versions by @marksweb in https://github.com/django-cms/djangocms-icon/pull/43
+* fix: Updated mention of fontawesome 4 being default [#38] by @marksweb in https://github.com/django-cms/djangocms-icon/pull/44
+* feat: Dark mode support for iconpicker by @fsbraun in https://github.com/django-cms/djangocms-icon/pull/46
 
+## New Contributors
+* @NarenderRajuB made their first contribution in https://github.com/django-cms/djangocms-icon/pull/34
+* @crydotsnake made their first contribution in https://github.com/django-cms/djangocms-icon/pull/37
+* @Kaushal-Dhungel made their first contribution in https://github.com/django-cms/djangocms-icon/pull/39
+* @marksweb made their first contribution in https://github.com/django-cms/djangocms-icon/pull/43
+* @fsbraun made their first contribution in https://github.com/django-cms/djangocms-icon/pull/46
 
 2.0.0 (2020-09-02)
 ==================

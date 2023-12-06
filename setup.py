@@ -7,7 +7,6 @@ from djangocms_icon import __version__
 REQUIREMENTS = [
     'django-cms>=3.10',
     'djangocms-attributes-field>=1',
-    'django-treebeard>=4.3,<4.5',
 ]
 
 
@@ -24,6 +23,8 @@ CLASSIFIERS = [
     'Framework :: Django',
     'Framework :: Django :: 3.2',
     'Framework :: Django :: 4.0',
+    'Framework :: Django :: 4.1',
+    'Framework :: Django :: 4.2',
     'Framework :: Django CMS',
     'Framework :: Django CMS :: 3.10',
     'Framework :: Django CMS :: 3.11',
