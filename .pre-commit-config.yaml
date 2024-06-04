@@ -15,7 +15,7 @@ repos:
         args: ["--py38-plus"]
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: '1.16.0'
+    rev: '1.18.0'
     hooks:
       - id: django-upgrade
         args: [--target-version, "3.2"]
@@ -42,6 +42,6 @@ repos:
       - id: isort
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.6
+    rev: v2.3.0
     hooks:
       - id: codespell
