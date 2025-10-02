@@ -2,7 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.forms import fields, widgets
 from django.template.loader import render_to_string
-from django.utils.translation import gettext
+from django.utils.translation import gettext_lazy
 
 
 def get_iconsets():
@@ -93,7 +93,7 @@ class Icon(models.CharField):
 
     def __init__(self, *args, **kwargs):
         if 'verbose_name' not in kwargs:
-            kwargs['verbose_name'] = gettext('Icon')
+            kwargs['verbose_name'] = gettext_lazy('Icon')
         if 'max_length' not in kwargs:
             kwargs['max_length'] = 255
         if 'blank' not in kwargs:
