@@ -2,11 +2,19 @@
 Changelog
 =========
 
+2.1.1 (2025-10-29)
+==================
+
+* Add CodeQL workflow for GitHub code scanning by @lgtm-com[bot] in https://github.com/django-cms/djangocms-icon/pull/49
+* fix: change gettext to gettext_lazy to prevent generating migration by @mihalikv in https://github.com/django-cms/djangocms-icon/pull/86
+
+**New Contributors**
+
+* @mihalikv made their first contribution in https://github.com/django-cms/djangocms-icon/pull/86
 
 2.1.0 (2022-12-06)
 ==================
 
-## What's Changed
 * feat: Support for Django 4.2 and django CMS 3.11
 * Port github actions by @NarenderRajuB in https://github.com/django-cms/djangocms-icon/pull/34
 * IMPROVEMENT: Add note for JS and CSS Files by @crydotsnake in https://github.com/django-cms/djangocms-icon/pull/37
@@ -16,7 +24,8 @@ Changelog
 * fix: Updated mention of fontawesome 4 being default [#38] by @marksweb in https://github.com/django-cms/djangocms-icon/pull/44
 * feat: Dark mode support for iconpicker by @fsbraun in https://github.com/django-cms/djangocms-icon/pull/46
 
-## New Contributors
+**New Contributors**
+
 * @NarenderRajuB made their first contribution in https://github.com/django-cms/djangocms-icon/pull/34
 * @crydotsnake made their first contribution in https://github.com/django-cms/djangocms-icon/pull/37
 * @Kaushal-Dhungel made their first contribution in https://github.com/django-cms/djangocms-icon/pull/39
