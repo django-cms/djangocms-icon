@@ -15,7 +15,7 @@ repos:
         args: ["--py38-plus"]
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: '1.29.1'
+    rev: '1.30.0'
     hooks:
       - id: django-upgrade
         args: [--target-version, "3.2"]
@@ -37,11 +37,11 @@ repos:
       - id: mixed-line-ending
 
   - repo: https://github.com/pycqa/isort
-    rev: 7.0.0
+    rev: 8.0.1
     hooks:
       - id: isort
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.4.1
+    rev: v2.4.2
     hooks:
       - id: codespell
